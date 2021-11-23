@@ -55,11 +55,12 @@ int main() {
 
     if (!setTime()) return -1;
 
-    EnvSensor env;
-    printf("Temp: %f, Pressure: %f\n", env.getTemperature(), env.getPressure());
+    // The two lines below will demonstrate the features on the MSB. See uop_msb.cpp for examples of how to use different aspects of the MSB
+    // UOP_MSB_TEST board;  //Only uncomment for testing - DO NOT USE OTHERWISE
+    // board.test();        //Only uncomment for testing - DO NOT USE OTHERWISE
 
+    // Write fake data to Azure IoT Center. Don't forget to edit azure_cloud_credentials.h
     printf("You will need your own connection string in azure_cloud_credentials.h\n");
-
     LogInfo("Starting the Demo");
     azureDemo();
     LogInfo("The demo has ended");
