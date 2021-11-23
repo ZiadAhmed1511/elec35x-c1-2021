@@ -7,14 +7,14 @@
 #define AZURE_CLOUD_CREDENTIALS_H
 
 namespace azure_cloud {
-namespace credentials {
-/*
- * Primary Connecion String
- */
+    namespace credentials {
+        /*
+        * Primary Connecion String
+        */
 
-// Use https://dpsgen.z8.web.core.windows.net/ to obtain YOUR connection string
-// This one will not work, but I guess you knew that ;)
-char iothub_connection_string[] = "HostName=blahblahblah=";
-}
+        // Use https://dpsgen.z8.web.core.windows.net/ to obtain YOUR connection string
+        // This one will not work, but I guess you knew that ;)
+        const char iothub_connection_string[] = "HostName=blahdeblahdeblahdumdedumdumtoodlepipIguessyoucanseethisisnotarealconnectionstring:)=";
+    }
 }
 #endif
