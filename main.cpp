@@ -51,6 +51,12 @@ bool setTime()
 }
 
 int main() {
+
+    // START - UNCOMMENT THE FOLLOWING TWO LINES TO TEST YOUR BOARD AND SEE THE DEMO CODE WORKING
+    //UOP_MSB_TEST  board;  //This class is purely for testing. Do no use it otherwise!!!!!!!!!!!
+    //board.test();         //Look inside here to see how this works
+    // END
+
     if (!connect()) return -1;
 
     if (!setTime()) return -1;
