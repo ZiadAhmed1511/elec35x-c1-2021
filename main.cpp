@@ -15,6 +15,10 @@ using namespace uop_msb;
 extern void azureDemo();
 extern NetworkInterface *_defaultSystemNetwork;
 
+class sensordetect {
+      
+};
+
 bool connect()
 {
     LogInfo("Connecting to the network");
@@ -52,10 +56,8 @@ bool setTime()
 
 int main() {
 
-    // START - UNCOMMENT THE FOLLOWING TWO LINES TO TEST YOUR BOARD AND SEE THE DEMO CODE WORKING
-    //UOP_MSB_TEST  board;  //This class is purely for testing. Do no use it otherwise!!!!!!!!!!!
-    //board.test();         //Look inside here to see how this works
-    // END
+    UOP_MSB_TASK1  sensor; //Class for sensor 
+    sensor.test();
 
     if (!connect()) return -1;
 
