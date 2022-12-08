@@ -10,6 +10,9 @@
 #include "azure_c_shared_utility/xlogging.h"
 #include <cstring>
 #include <string.h>
+#include "date.hpp"
+#include "sampling.h"
+
 using namespace uop_msb;
 
 extern void azureDemo();
@@ -18,6 +21,15 @@ extern NetworkInterface *_defaultSystemNetwork;
 class sensordetect {
       
 };
+
+void LCD_update();
+
+Thread nwrkThread;                                      //Thread network
+Thread t1;												//writing to the SD card
+Thread t2;												//communicating with the serial interface
+Thread t3;												//communicating with the network
+Thread t4;												//LCD REFRESH
+Thread t5(osPriorityISR);					            //HIGHEST PRIORITY sample loop function
 
 bool connect()
 {
@@ -54,10 +66,13 @@ bool setTime()
     return true;
 }
 
+//MAIN CPP
+
 int main() {
 
     UOP_MSB_TASK1  sensor; //Class for sensor 
-    sensor.test();
+    sensor.test();         //Task 1 test
+
 
     if (!connect()) return -1;
 
